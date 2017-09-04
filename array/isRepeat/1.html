@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isRepeat function 1</title>
+    <script>
+        var isRepeat = function(arr){
+            var arrString = arr.join(",") +",";  // 最后一个逗号确保最后一个值后面也有标点
+            for (var i = 0; i < arr.length; i++){
+                if(arrString.replace(arr[i] + ",", "").indexOf(arr[i] + ",")){
+                    alert("数组中有重复元素：" + arr[i]);
+                    break;
+                }
+            }
+        } // 此函数判断了是否有重复值的同时，也可以返回重复的元素
+    </script>
+</head>
+<body>
+    <script>
+        var arr1 = new Array("111", "22", "33", "111");
+        isRepeat(arr1);
+    </script>
+
+<div>
+    <h1>The principle of this function</h1>
+    <p title="将数组转换为字符串后，循环数组，把字符串中的某一个值替换了之后如果还能找到的话那么就说明有重复值。">
+        It changes an array into a string , then loop the array to find if there is a same value after the first value was replaced. If there is a same one, it means there are same value in the array.
+    </p>
+    <h1>something to explain:</h1>
+    <ol>
+        <li title="join(',')方法  与  arr.toString()达到同样的效果，可换着用。">The function of join can be replaced with the toString function.</li>
+        <li title="replace方法不会改变原始字符串的值,replace方法stringObj.replace(regexp/substr,replacement),其中replacement可以是一个字符串，也可以是一个函数（有返回值的函数）">The function of replace don't change the initial value of the string. It has two parameters and the second parameter can be a string or a function with returned value.</li>
+    </ol>
+
+</div>
+</body>
+</html>

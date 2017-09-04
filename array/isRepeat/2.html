@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isRepeat Function 2</title>
+    <script>
+        var isRepeat = function(arr) {
+            var sortedArr = arr.sort();
+            alert(arr);
+            alert(sortedArr);
+            for (var i=0;i<arr.length;i++){
+                if (sortedArr[i] === sortedArr[i+1]){
+                    alert("数据重复内容："+ sortedArr[i]);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var arr = ["111", "22", "33", "111"];
+        isRepeat(arr);
+    </script>
+    <h1 title="函数的原理">
+        The principle of the function:
+    </h1>
+    <p title="先排序，如果有两个一样的值它们会排到一块，然后对比前后元素值就可以得到是否有重复内容。">At first, it sorts the array to make the same value together if there are. Then it compares the two adjacent values, if they are equal it means there are values in similar.</p>
+    <h1>something to explain:</h1>
+    <ol>
+        <li title="sort函数改变了原始的array">The function of sort sorted the initial array not a copy one, so the initial array have changed.</li>
+    </ol>
+</body>
+</html>

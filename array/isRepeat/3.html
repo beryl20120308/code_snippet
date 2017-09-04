@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>isRepeat Function 3</title>
+    <script>
+        var isRepeat = function(arr) {
+            var hash = {};
+            for (var i in arr) {
+                if(hash[arr[i]]) {
+                    alert("有重复，重复值为："+ arr[i]);
+                }
+                hash[arr[i]] = true;
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+<script>
+    var arr1 = ["111","22","33","111"];
+    isRepeat(arr1);
+</script>
+<h1 title="函数的原理">
+    The principle fo the function:
+</h1>
+<p>
+    利用hash键值对，如果有则说明有重复。适用于一维数组，数组值为数字、字符串或对象。
+</p>
+</body>
+</html>
